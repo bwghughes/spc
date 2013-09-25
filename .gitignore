@@ -18,7 +18,7 @@ develop-eggs
 cover
 .coverage
 .env
-.svg
+*.svg
 # Installer logs
 pip-log.txt
 
