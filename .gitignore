@@ -21,7 +21,7 @@ cover
 *.svg
 # Installer logs
 pip-log.txt
-
+docs/_build
 # Unit test / coverage reports
 .coverage
 .tox

@@ -27,23 +27,10 @@ the right thing is more important than writing the code.
 
 This is people's lives we're messing with :)
 
-
-    >>> data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    >>> c = ControlChart(data)
-    >>> c.mean = 5
-    >>> c.lower_control_level = 2.339999999999999857891452848
-    >>> c.upper_control_level = 7.660000000000000142108547152
-    >>> c.to_json() # JSON
-    >>> # TODO
-    >>> c.to_python() # Python data structure
-    >>> # TODO
-    >>> c.to_flot() # For Flot JSON
-    >>> # TODO
-    >>> c.to_excel() # Excel Worksheet
-    >>> # TODO
-    >>> c.to_png('control_chart.png')
-    >>> # TODO
-    >>> c.to_pdf('control_chart.pdf')
+    >>> from spcchart import SpcChart
+    >>> widgets_quality = [56, 75, 82, 12, 34, 18, 22, 81, 88, 91, 76, 85, 100, 88, 43, 44]
+    >>> c = SpcChart(widget_quality, title="Widget Quality")
+    >>> c.render()
 
 
 Understanding Control Charts
@@ -63,12 +50,6 @@ Thanks
 
 **John Seddon**
     For applying uncommon sense to common practice.
-
-User Guide
-----------
-
-This part of the documentation is about building control charts using different
-view components - Excel, PDF, JSON, Yaml, ODF.......
 
 Contents:
 

@@ -6,7 +6,7 @@ What are control charts?
 Control charts are really useful tools to help you understand how 'in control your process is'
 so you can help make process changes based on evidence, rather than bullshit.
 
-You can read lots more about control charts [here][1].
+You can read lots more about control charts ![here](http://en.wikipedia.org/wiki/Statistical_process_control "Control Charts On Wikipedia").
 
 You can read the docs about the library [here][2].
 
