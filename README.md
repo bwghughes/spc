@@ -15,7 +15,10 @@ In progress
 
 Or, just call the service URL with your data:
 
-http://spc.io/?data=1,2,3,4,5,6,7,8,9,10&ouput=png and it will send back something like this:
+``` bash
+curl -d 'data=1,2,3,4,5,6,7,8,9,10' https://spc.io/new
+```
+And you'll get a url with your new chart - looking a little like this:
 
 ![Control Chart](http://benhughes.org.s3.amazonaws.com/controlcharts/sample.png "Control Chart")
 
@@ -27,7 +30,7 @@ pip install spcchart
 ```
 and run:
 ``` bash
-spcchart --data=32,45,65,667,767,78,887,879,99,98,98,98 --title="I can s ee now"
+spcchart --data=32,45,65,667,767,78,887,879,99,98,98,98 --title="I can see now"
 ```
 and hip hip hooray, an svg will be placed in your current working directory. Open with any browser and you're away.
 
