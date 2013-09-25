@@ -29,14 +29,14 @@ This is people's lives we're messing with :)
 
     >>> from spcchart import SpcChart
     >>> widgets_quality = [56, 75, 82, 12, 34, 18, 22, 81, 88, 91, 76, 85, 100, 88, 43, 44]
-    >>> c = SpcChart(widget_quality, title="Widget Quality")
+    >>> c = SpcChart(widgets_quality, title="Widget Quality")
     >>> c.render()
 
 
 Understanding Control Charts
 -----------------------------
 
-# TODO
+.. image: http://benhughes.org.s3.amazonaws.com/controlcharts/widget_quality.png
 
 
 Thanks
