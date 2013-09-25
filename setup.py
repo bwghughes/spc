@@ -6,7 +6,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.md')).read()
 
 
-version = '0.1'
+version = '0.4'
 
 install_reqs = parse_requirements(os.path.join(here, 'requirements.txt'))
 install_requires = [str(ir.req) for ir in install_reqs]

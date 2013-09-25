@@ -19,10 +19,19 @@ http://spc.io/?data=1,2,3,4,5,6,7,8,9,10&ouput=png and it will send back somethi
 
 ![Control Chart](http://benhughes.org.s3.amazonaws.com/controlcharts/sample.png "Control Chart")
 
-[1]:http://en.wikipedia.org/wiki/Control_chart
-[2]:https://statistical-process-control-charts.readthedocs.org/en/latest/
+Command Line Usage
+-------------------
 
-Library Use
+``` bash
+pip install spcchart
+```
+and run:
+``` bash
+spcchart --data=32,45,65,667,767,78,887,879,99,98,98,98 --title="I can s ee now"
+```
+and hip hip hooray, an svg will be placed in your current working directory. Open with any browser and you're away.
+
+Python Library Use
 ------------
 
 ``` python
