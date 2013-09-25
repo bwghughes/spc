@@ -1,2 +1,2 @@
-include README.rst
-include NEWS.txt
+include README.md
+include requirements.txt
