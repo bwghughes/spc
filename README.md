@@ -20,7 +20,7 @@ curl -d 'data=1,2,3,4,5,6,7,8,9,10' https://spc.io/new
 ```
 And you'll get a url with your new chart - looking a little like this:
 
-
+![Control Chart](http://benhughes.org.s3.amazonaws.com/controlcharts/sample.png "Control Chart")
 
 Command Line Usage
 -------------------
