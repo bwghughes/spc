@@ -17,7 +17,7 @@ Or, just call the service URL with your data:
 
 http://spc.io/?data=1,2,3,4,5,6,7,8,9,10&ouput=png and it will send back something like this:
 
-![Wikipedia Control Chart](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/ControlChart.svg/520px-ControlChart.svg.png "Control Chart")
+![Wikipedia Control Chart](http://benhughes.org.s3.amazonaws.com/controlcharts/sample.png "Control Chart")
 
 [1]:http://en.wikipedia.org/wiki/Control_chart
 [2]:https://statistical-process-control-charts.readthedocs.org/en/latest/
