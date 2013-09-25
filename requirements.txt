@@ -1,4 +1,3 @@
-lxml==3.2.3
 numpy==1.7.1
 pygal==1.1.0
 shortuuid==0.4

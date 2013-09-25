@@ -31,3 +31,9 @@ Library Use
 >>> c = SpcChart(data, title="Flow Ho")
 >>> c.render()
 ```
+
+To do
+------
+
+* Factor out numpy - its a bit overkill.
+* Add themes to charts
