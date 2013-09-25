@@ -1,5 +1,5 @@
 numpy==1.7.1
 pygal==1.1.0
 shortuuid==0.4
-spcchart==0.1
+spcchart==0.14
 wsgiref==0.1.2
