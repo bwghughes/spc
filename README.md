@@ -11,7 +11,7 @@ You can read the docs about the library and control charts [here](https://statis
 API Access
 ---
 
-Or, just call the service URL with your data:
+You can call the webservice service with your data:
 
 ``` bash
 curl -d 'data=1,2,3,4,5,6,7,8,9,10' -d 'title=I can see now' https://spc.io/new
