@@ -1,5 +1,6 @@
 include README.md
 include requirements.txt
 include version
+include LICENCE
 recursive-include docs *
 recursive-exclude docs/_build *
