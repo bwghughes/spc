@@ -18,6 +18,21 @@ curl -d 'data=1,2,3,4,5,6,7,8,9,10' -d 'title=I can see now' https://spc.io/new
 ```
 And you'll get a url with your new chart - looking a little like this:
  -->
+Installing
+==========
+
+To install the latest release from `PyPI <http://pypi.python.org/pypi/spcchart>`_
+
+.. code-block:: console
+
+    $ pip install spcchart
+
+To install the latest development version from `GitHub <https://github.com/bwghughes/spc>`_
+
+.. code-block:: console
+
+    $ pip install git+git://github.com/bwghughes/spc.git
+
 
 An example:
 ---
