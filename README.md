@@ -21,18 +21,19 @@ And you'll get a url with your new chart - looking a little like this:
 Installing
 ==========
 
-To install the latest release from `PyPI <http://pypi.python.org/pypi/spcchart>`_
+To install the latest release from (PyPI)[http://pypi.python.org/pypi/spcchart]
 
-.. code-block:: console
+``` console
 
     $ pip install spcchart
+```
 
-To install the latest development version from `GitHub <https://github.com/bwghughes/spc>`_
+To install the latest development version from (GitHub)[https://github.com/bwghughes/spc]
 
-.. code-block:: console
+``` console
 
     $ pip install git+git://github.com/bwghughes/spc.git
-
+```
 
 An example:
 ---
