@@ -3,7 +3,7 @@ import argparse
 
 import pygal
 import shortuuid
-from pygal.style import BlueStyle
+from pygal.style import BlueStyle, DarkSolarizedStyle, DarkColorizedStyle
 
 
 from spc import *
@@ -26,3 +26,4 @@ class SpcChart(object):
         line_chart.add('Mean', [mean for d in self.data])
         line_chart.add('Data', [d for d in self.data])
         line_chart.render_to_file(self.filename)
+        print "Written to {}".format(self.filename)
