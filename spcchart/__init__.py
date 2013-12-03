@@ -15,6 +15,8 @@ def main():
 
     if options.data and options.title:
         chart = SpcChart([float(i) for i in options.data.split(",")], title=options.title)
-        chart.render()
+        filename = chart.render()
+        path = 'file://{}/{}'.format(os.path.abspath(os.curdir), filename)
+        print "Created file: {}".format(path)
     else:
         print "You need to supply --data and --title"

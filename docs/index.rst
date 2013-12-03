@@ -33,10 +33,16 @@ This is people's lives we're messing with :)
     >>> c.render()
 
 
-Understanding Control Charts
------------------------------
+From the command line
+----------------------
 
-.. image: http://benhughes.org.s3.amazonaws.com/controlcharts/widget_quality.png
+    $> spcchart --data=56,75,82,12,34,18,22,81,88,91,76,85,100,88,43,44 --title="Widget Quality"
+    $> Created file: file:///<your working directory>/SzaQfdjhMaqhQBFMTw8UZe.svg
+
+When open it in a browser you get:
+
+
+.. image: http://benhughes.org.s3.amazonaws.com/controlcharts/spc.png
 
 
 Thanks

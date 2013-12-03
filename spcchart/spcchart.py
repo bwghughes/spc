@@ -27,3 +27,4 @@ class SpcChart(object):
         line_chart.add('Data', [d for d in self.data])
         line_chart.render_to_file(self.filename)
         print "Written to {}".format(self.filename)
+        return self.filename
