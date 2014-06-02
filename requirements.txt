@@ -1,4 +1,4 @@
 numpy==1.7.1
-pygal==1.1.0
+pygal==1.4.6
 shortuuid==0.4
 wsgiref==0.1.2
