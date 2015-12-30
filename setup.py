@@ -1,11 +1,14 @@
-from pip.req import parse_requirements
 from setuptools import setup, find_packages
 import sys, os
 
 here = os.path.abspath(os.path.dirname(__file__))
 version = open('version', 'r').read()
-install_reqs = parse_requirements(os.path.join(here, 'requirements.txt'))
-install_requires = [str(ir.req) for ir in install_reqs]
+install_requires = [
+    "numpy==1.7.1",
+    "pygal==1.4.6",
+    "shortuuid==0.4",
+    "wsgiref==0.1.2",
+]
 
 
 setup(name='spcchart',
@@ -23,6 +26,7 @@ setup(name='spcchart',
     packages=['spcchart'],
     include_package_data=True,
     zip_safe=False,
+    setup_requires=['numpy==1.7.1'],
     install_requires=install_requires,
     entry_points={
         'console_scripts':
