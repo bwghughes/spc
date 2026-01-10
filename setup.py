@@ -4,10 +4,9 @@ import sys, os
 here = os.path.abspath(os.path.dirname(__file__))
 version = open('version', 'r').read()
 install_requires = [
-    "numpy==1.7.1",
-    "pygal==1.4.6",
-    "shortuuid==0.4",
-    "wsgiref==0.1.2",
+    "numpy>=1.20.0",
+    "pygal>=3.0.0",
+    "shortuuid>=1.0.0",
 ]
 
 
@@ -26,7 +25,6 @@ setup(name='spcchart',
     packages=['spcchart'],
     include_package_data=True,
     zip_safe=False,
-    setup_requires=['numpy==1.7.1'],
     install_requires=install_requires,
     entry_points={
         'console_scripts':

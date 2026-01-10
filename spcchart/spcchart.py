@@ -6,7 +6,7 @@ import shortuuid
 from pygal.style import BlueStyle, DarkSolarizedStyle, DarkColorizedStyle, CleanStyle
 
 
-from spc import *
+from .spc import *
 
 
 class SpcChart(object):
@@ -26,7 +26,7 @@ class SpcChart(object):
         line_chart.add('Mean', [mean for d in self.data])
         line_chart.add('Data', [d for d in self.data])
         line_chart.render_to_file(self.filename)
-        print "Written to {}".format(self.filename)
+        print("Written to {}".format(self.filename))
         return self.filename
 
     def render_to_svg(self):

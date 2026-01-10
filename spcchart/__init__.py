@@ -17,6 +17,6 @@ def main():
         chart = SpcChart([float(i) for i in options.data.split(",")], title=options.title)
         filename = chart.render_to_file()
         path = 'file://{}/{}'.format(os.path.abspath(os.curdir), filename)
-        print "Created file: {}".format(path)
+        print("Created file: {}".format(path))
     else:
-        print "You need to supply --data and --title"
+        print("You need to supply --data and --title")
