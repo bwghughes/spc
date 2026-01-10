@@ -66,7 +66,7 @@ def test_beyond_limits(data, center, lcl, ucl):
     return data[0] > ucl or data[0] < lcl
 
 def test_violating_runs(data, center, lcl, ucl):
-    for i in xrange(1, len(data)):
+    for i in range(1, len(data)):
         if (data[i-1] - center)*(data[i] - center) < 0:
             return False
     return True
@@ -87,7 +87,7 @@ def get_stats_x_mr_x(data, size):
     assert size == 1
     center = numpy.mean(data)
     sd = 0
-    for i in xrange(len(data)-1):
+    for i in range(len(data)-1):
         sd += abs(data[i] - data[i+1])
     sd /= len(data) - 1
     d2 = 1.128
@@ -98,7 +98,7 @@ def get_stats_x_mr_x(data, size):
 def get_stats_x_mr_mr(data, size):
     assert size == 1
     sd = 0
-    for i in xrange(len(data)-1):
+    for i in range(len(data)-1):
         sd += abs(data[i] - data[i+1])
     sd /= len(data) - 1
     d2 = 1.128
@@ -253,7 +253,7 @@ def prepare_data_x_bar_s_s(data, size):
 
 def prepare_data_x_mr(data, size):
     data2 = [0]
-    for i in xrange(len(data)-1):
+    for i in range(len(data)-1):
         data2.append(abs(data[i] - data[i+1]))
     return data2
 
@@ -286,7 +286,7 @@ def prepare_data_cusum(data, size, target = None):
         target = numpy.mean(data)
     for d in data:
         data2.append(float(d) - target)
-    data3 = [sum(data2[:i]) for i in xrange(len(data2)+1)]
+    data3 = [sum(data2[:i]) for i in range(len(data2)+1)]
     return data3
 
 STATS_FUNCS = {
@@ -367,7 +367,7 @@ class Spc(object):
         else:
             rs = self.rules
         points = {}
-        for i in xrange(len(self._data)):
+        for i in range(len(self._data)):
             for r in rs:
                 func, points_num = RULES_FUNCS[r]
                 if func == None or i <= points_num - 1:

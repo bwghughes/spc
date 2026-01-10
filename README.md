@@ -62,6 +62,43 @@ Python Library Use
 >>> c.render()
 ```
 
+Development
+-----------
+
+This project uses [uv](https://docs.astral.sh/uv/) for package management and [pytest](https://pytest.org/) for testing.
+
+### Setup Development Environment
+
+1. Install uv (if not already installed):
+``` bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. Create a virtual environment and install dependencies:
+``` bash
+uv venv
+uv pip install -e ".[dev]"
+```
+
+3. Run tests:
+``` bash
+uv run pytest
+```
+
+4. Run tests with coverage:
+``` bash
+uv run pytest --cov=spcchart --cov-report=html
+```
+
+### Running Tests
+
+All tests are located in the `tests/` directory. To run specific test files:
+
+``` bash
+uv run pytest tests/test_spc.py
+uv run pytest tests/test_spcchart.py -v
+```
+
 To do
 ------
 
