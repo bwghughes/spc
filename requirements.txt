@@ -2,6 +2,7 @@
 # Install with: uv pip install -e .
 # Or for development: uv pip install -e ".[dev]"
 
-numpy>=1.20.0
 pygal>=3.0.0
+plotly>=5.0.0
 shortuuid>=1.0.0
+flask>=2.0.0

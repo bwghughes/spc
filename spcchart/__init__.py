@@ -1,9 +1,10 @@
 import os
 import argparse
 from .spcchart import SpcChart
+from .plotly_chart import PlotlySpcChart
 
 
-__all__ = "SpcChart"
+__all__ = ["SpcChart", "PlotlySpcChart"]
 
 def main():
     parser = argparse.ArgumentParser(description='SPC Chart Generator')
