@@ -8,7 +8,20 @@ Author: Michal Nowikowski <godfryd@gmail.com>
 License: MIT
 """
 
-import numpy
+import math
+import statistics
+
+
+def _mean_2d(data):
+    """Calculate mean of all elements in a 2D array (list of lists)."""
+    all_values = [item for sublist in data for item in sublist]
+    return statistics.mean(all_values)
+
+
+def _std_rows(data, ddof=0):
+    """Calculate standard deviation for each row and return list of std values."""
+    return [statistics.stdev(row) if len(row) > 1 else 0 for row in data]
+
 
 CHART_X_BAR_R_X = "Xbar R - X"
 CHART_X_BAR_R_R = "Xbar R - R"
@@ -85,7 +98,7 @@ A3 = [0,0, 2.659, 1.954, 1.628, 1.427, 1.287, 1.182, 1.099, 1.032, 0.975, 0.927,
 
 def get_stats_x_mr_x(data, size):
     assert size == 1
-    center = numpy.mean(data)
+    center = statistics.mean(data)
     sd = 0
     for i in range(len(data)-1):
         sd += abs(data[i] - data[i+1])
@@ -118,7 +131,7 @@ def get_stats_x_bar_r_x(data, size):
         Rsum += max(xset) - min(xset)
     Rbar = Rsum / len(data)
 
-    Xbar = numpy.mean(data)
+    Xbar = _mean_2d(data)
 
     center = Xbar
     lcl = center - A2[n]*Rbar
@@ -146,8 +159,8 @@ def get_stats_x_bar_s_x(data, size):
     assert n >= 2
     assert n <= 10
 
-    Sbar = numpy.mean(numpy.std(data, 1, ddof=1))
-    Xbar = numpy.mean(data)
+    Sbar = statistics.mean(_std_rows(data, ddof=1))
+    Xbar = _mean_2d(data)
 
     center = Xbar
     lcl = center - A3[n]*Sbar
@@ -159,7 +172,7 @@ def get_stats_x_bar_s_s(data, size):
     assert n >= 2
     assert n <= 10
 
-    Sbar = numpy.mean(numpy.std(data, 1, ddof=1))
+    Sbar = statistics.mean(_std_rows(data, ddof=1))
 
     center = Sbar
     lcl = B3[n]*Sbar
@@ -171,7 +184,7 @@ def get_stats_p(data, size):
     assert n > 1
 
     pbar = float(sum(data)) / (n * len(data))
-    sd = numpy.sqrt(pbar*(1-pbar)/n)
+    sd = math.sqrt(pbar*(1-pbar)/n)
 
     center = pbar
     lcl = center - 3*sd
@@ -187,7 +200,7 @@ def get_stats_np(data, size):
     assert n > 1
 
     pbar = float(sum(data)) / (n * len(data))
-    sd = numpy.sqrt(n*pbar*(1-pbar))
+    sd = math.sqrt(n*pbar*(1-pbar))
 
     center = n*pbar
     lcl = center - 3*sd
@@ -199,13 +212,13 @@ def get_stats_np(data, size):
     return center, lcl, ucl
 
 def get_stats_c(data, size):
-    cbar = numpy.mean(data)
+    cbar = statistics.mean(data)
 
     center = cbar
-    lcl = center - 3*numpy.sqrt(cbar)
+    lcl = center - 3*math.sqrt(cbar)
     if lcl < 0:
         lcl = 0
-    ucl = center + 3*numpy.sqrt(cbar)
+    ucl = center + 3*math.sqrt(cbar)
     return center, lcl, ucl
 
 def get_stats_u(data, size):
@@ -215,10 +228,10 @@ def get_stats_u(data, size):
     cbar = float(sum(data))/(len(data)*n)
 
     center = cbar
-    lcl = center - 3*numpy.sqrt(cbar/n)
+    lcl = center - 3*math.sqrt(cbar/n)
     if lcl < 0:
         lcl = 0
-    ucl = center + 3*numpy.sqrt(cbar/n)
+    ucl = center + 3*math.sqrt(cbar/n)
     return center, lcl, ucl
 
 def get_stats_cusum(data, size):
@@ -236,7 +249,7 @@ def prepare_data_none(data, size):
 def prepare_data_x_bar_rs_x(data, size):
     data2 = []
     for xset in data:
-        data2.append(numpy.mean(xset))
+        data2.append(statistics.mean(xset))
     return data2
 
 def prepare_data_x_bar_r_r(data, size):
@@ -248,7 +261,7 @@ def prepare_data_x_bar_r_r(data, size):
 def prepare_data_x_bar_s_s(data, size):
     data2 = []
     for xset in data:
-        data2.append(numpy.std(xset, ddof=1))
+        data2.append(statistics.stdev(xset) if len(xset) > 1 else 0)
     return data2
 
 def prepare_data_x_mr(data, size):
@@ -283,7 +296,7 @@ def prepare_data_cusum(data, size, target = None):
     """
     data2 = []
     if target is None:
-        target = numpy.mean(data)
+        target = statistics.mean(data)
     for d in data:
         data2.append(float(d) - target)
     data3 = [sum(data2[:i]) for i in range(len(data2)+1)]

@@ -55,12 +55,40 @@ and hip hip hooray, an svg will be placed in your current working directory. Ope
 Python Library Use
 ------------
 
+### Static SVG Charts (Pygal)
+
 ``` python
 >>> from spcchart import SpcChart
 >>> data = [1,2,3,4,5,6,7,8,9,8,7,6,5,5,5,4,4,3,3,2,2,2,3,4,5,5,5]
 >>> c = SpcChart(data, title="Flow Ho")
->>> c.render()
+>>> c.render_to_file()  # Creates SVG file
 ```
+
+### Interactive Web Charts (Plotly) - NEW!
+
+``` python
+>>> from spcchart.plotly_chart import PlotlySpcChart
+>>> data = [1,2,3,4,5,6,7,8,9,8,7,6,5,5,5,4,4,3,3,2,2,2,3,4,5,5,5]
+>>> chart = PlotlySpcChart(data, title="Interactive Chart")
+>>> chart.render_to_file()  # Creates interactive HTML file
+>>> # or get HTML string
+>>> html = chart.render_to_html()
+```
+
+Web Application
+---------------
+
+Run the Flask web application for a browser-based interface:
+
+``` bash
+python app.py
+```
+
+Then open http://localhost:5000 in your browser to:
+- Enter data points
+- Select chart type
+- Generate interactive charts
+- View statistics and violations
 
 Development
 -----------
@@ -99,8 +127,21 @@ uv run pytest tests/test_spc.py
 uv run pytest tests/test_spcchart.py -v
 ```
 
+Features
+--------
+
+- ✅ **No numpy dependency** - Uses pure Python stdlib (statistics, math)
+- ✅ **Interactive charts** - Plotly-based web charts with zooming, panning, and export
+- ✅ **Web interface** - Flask app for browser-based chart generation
+- ✅ **Multiple chart types** - X-mR, X-bar R, p, c, and more
+- ✅ **Violation detection** - Automatic detection of out-of-control points
+- ✅ **Modern testing** - Comprehensive pytest test suite (41 tests)
+- ✅ **Package management** - Uses uv for fast, reliable dependency management
+
 To do
 ------
 
-* Factor out numpy - its a bit overkill.
 * Add themes to charts
+* Add more chart types (EWMA, CUSUM improvements)
+* Add export to PDF
+* Add multi-chart dashboards

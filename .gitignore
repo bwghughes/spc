@@ -26,6 +26,29 @@ docs/_build
 .coverage
 .tox
 
-#Translations
+# Translations
 *.mo
 .eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# pytest
+.pytest_cache/
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# uv
+.uv/

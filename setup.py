@@ -4,9 +4,10 @@ import sys, os
 here = os.path.abspath(os.path.dirname(__file__))
 version = open('version', 'r').read()
 install_requires = [
-    "numpy>=1.20.0",
     "pygal>=3.0.0",
+    "plotly>=5.0.0",
     "shortuuid>=1.0.0",
+    "flask>=2.0.0",
 ]
 
 
