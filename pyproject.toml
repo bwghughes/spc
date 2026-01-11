@@ -10,12 +10,13 @@ readme = "README.md"
 authors = [
     {name = "Ben Hughes", email = "bwghughes@gmail.com"}
 ]
-license = {text = "BSD"}
-keywords = ["statistics", "spc", "chart", "tool", "process control"]
+license = {text = "BSD-3-Clause"}
+keywords = ["statistics", "spc", "chart", "tool", "process control", "quality", "control chart", "plotly", "visualization", "six sigma", "lean", "manufacturing"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
+    "Intended Audience :: Manufacturing",
     "License :: OSI Approved :: BSD License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -23,7 +24,12 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
     "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Operating System :: OS Independent",
+    "Framework :: Flask",
 ]
 requires-python = ">=3.8"
 dependencies = [
@@ -40,8 +46,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://statistical-process-control-charts.readthedocs.org/en/latest/"
+Homepage = "https://github.com/bwghughes/spc"
 Documentation = "https://statistical-process-control-charts.readthedocs.org/en/latest/"
+Repository = "https://github.com/bwghughes/spc"
+Issues = "https://github.com/bwghughes/spc/issues"
+Changelog = "https://github.com/bwghughes/spc/blob/main/CHANGELOG.md"
 
 [project.scripts]
 spcchart = "spcchart:main"

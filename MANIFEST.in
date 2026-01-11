@@ -1,6 +1,9 @@
 include README.md
+include CHANGELOG.md
 include requirements.txt
 include version
 include LICENCE
 recursive-include docs *
 recursive-exclude docs/_build *
+global-exclude __pycache__
+global-exclude *.py[co]
