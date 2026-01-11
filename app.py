@@ -156,11 +156,13 @@ MAIN_TEMPLATE = """
                 <div class="form-group">
                     <label for="chart-type">Chart Type</label>
                     <select id="chart-type" name="chart_type">
-                        <option value="X mR - X">X-mR (Individual and Moving Range)</option>
-                        <option value="Xbar R - X">X-bar R (Subgroup Mean)</option>
-                        <option value="p">p-chart (Proportion Defective)</option>
-                        <option value="c">c-chart (Count of Defects)</option>
+                        <option value="X mR - X">X-mR Chart (Individual Values)</option>
+                        <option value="c">c-Chart (Count of Defects)</option>
                     </select>
+                    <div class="example">
+                        <strong>X-mR:</strong> Use for individual measurements (temperature, time, weight, etc.)<br>
+                        <strong>c-Chart:</strong> Use for count data (number of defects, errors, etc.)
+                    </div>
                 </div>
 
                 <button type="submit" class="btn">Generate Chart</button>
@@ -266,9 +268,13 @@ def generate_chart():
         return jsonify({'html': stats_html + html})
 
     except ValueError as e:
-        return jsonify({'error': f'Invalid data format: {str(e)}'}), 400
+        error_msg = str(e) if str(e) else 'Invalid number format in data'
+        return jsonify({'error': f'Invalid data format: {error_msg}'}), 400
+    except AssertionError as e:
+        return jsonify({'error': 'Invalid data for this chart type. Please check your data and try again.'}), 400
     except Exception as e:
-        return jsonify({'error': f'Error generating chart: {str(e)}'}), 500
+        error_msg = str(e) if str(e) else 'Unknown error occurred'
+        return jsonify({'error': f'Error generating chart: {error_msg}'}), 500
 
 
 @app.route('/health')
