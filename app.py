@@ -257,8 +257,8 @@ def generate_chart():
         <div style="background: #f0f0f0; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
             <h3>Statistics</h3>
             <p><strong>Center Line:</strong> {center:.4f}</p>
-            <p><strong>Lower Control Limit (LCL):</strong> {lcl:.4f if lcl is not None else 'N/A'}</p>
-            <p><strong>Upper Control Limit (UCL):</strong> {ucl:.4f if ucl is not None else 'N/A'}</p>
+            <p><strong>Lower Control Limit (LCL):</strong> {f'{lcl:.4f}' if lcl is not None else 'N/A'}</p>
+            <p><strong>Upper Control Limit (UCL):</strong> {f'{ucl:.4f}' if ucl is not None else 'N/A'}</p>
             {f'<p style="color: orange;"><strong>Violations detected:</strong> {len(violations)} rule(s)</p>' if violations else '<p style="color: green;"><strong>No violations detected</strong></p>'}
         </div>
         """
