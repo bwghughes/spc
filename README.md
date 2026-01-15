@@ -1,12 +1,17 @@
 ![Control Charts For Humans](http://benhughes.org.s3.amazonaws.com/controlcharts/ccfh.png "Control Charts For Humans")
 
-What are control charts?
----
+## What are control charts?
 
 Control charts are really useful tools to help you understand how 'in control your process is'
 so you can help make process changes based on evidence, rather than bullshit.
 
-You can read the docs about the library and control charts [here](https://statistical-process-control-charts.readthedocs.org/en/latest/ "Read The Docs").
+## 📚 Documentation
+
+- **[User Guide](USER_GUIDE.md)** - Complete guide with examples and best practices
+- **[API Reference](API_REFERENCE.md)** - Detailed API documentation
+- **[Examples](examples/)** - Practical examples for different use cases
+- **[Deployment Guide](DEPLOYMENT.md)** - How to deploy to PyPI
+- **[Changelog](CHANGELOG.md)** - Version history and updates
 
 <!-- HTTP Api Access
 ---
