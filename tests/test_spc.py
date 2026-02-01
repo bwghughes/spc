@@ -1,7 +1,6 @@
 """Tests for the SPC statistical module."""
 
 import pytest
-import numpy as np
 from spcchart.spc import (
     Spc,
     CHART_X_MR_X,
